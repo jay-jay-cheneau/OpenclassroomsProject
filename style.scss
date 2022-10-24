@@ -1,0 +1,455 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Shrikhand&display=swap");
+// RESPONSIVE 768PX
+.media-querie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+// REMPLISSAGE DU COEUR
+@mixin coeur {
+  margin-top: 0;
+  margin-right: 2px;
+  font-size: 1.6rem;
+}
+@mixin coeur-active {
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.1s ease-out;
+}
+
+.coeur {
+  @include coeur;
+  &:hover {
+    .fa-heart {
+      @include coeur-active;
+    }
+  }
+}
+
+.coeur .far {
+  font-size: 30px;
+  color: #ffabc1;
+  display: block;
+  background: -webkit-linear-gradient(#ffabc1, #356ad2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*.loader{
+  position: fixed;
+  z-index: 100000000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: disparition 3.2s ease-in-out forwards;
+}
+
+/*GROS TITRE*/
+h2 {
+  font-size: 22px;
+}
+
+/*LOGO HOMYFOOD*/
+img {
+  display: block;
+  margin-bottom: 5px;
+  max-width: 100%;
+}
+header {
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 65px;
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+  background-color: white;
+  position: sticky;
+  top: 0;
+}
+
+.paris-belleville {
+  width: 100%;
+  height: 48px;
+  background-color: rgb(198, 198, 198);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .icon {
+    margin-right: 10px;
+  }
+}
+
+.bg-grey {
+  padding: 2em 0;
+}
+
+.bg-grey p {
+  text-align: center;
+  font-family: "roboto";
+  margin-top: 30px;
+  color: dimgray;
+  font-size: 1.2rem;
+}
+
+.section-bloc {
+  padding: 0em 15px 2rem;
+  &.first-section {
+    padding: 0;
+  }
+  // odd / even
+  &:nth-child(even) {
+    background-color: #e8e8e8;
+  }
+
+  .card {
+    position: relative;
+    height: auto;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px 1px #d2d2d2;
+    margin: 0 auto 35px;
+    overflow: hidden;
+    border-radius: 20px;
+    font-family: "roboto";
+    .img-plats {
+      max-height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    .bloc-badge {
+      position: absolute;
+      top: 25px;
+      right: 20px;
+      width: 100px;
+      height: 30px;
+      background-color: #99e2d0;
+      font-family: "roboto";
+      color: rgb(45, 146, 91);
+      font-style: normal;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card-body-resto {
+      position: relative;
+      padding: 15px;
+      margin: 0 0 15px 0;
+      margin-top: 5px;
+      h2 {
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 19px;
+        font-weight: lighter;
+      }
+    }
+  }
+
+  h1 {
+    font-family: "roboto";
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .icon {
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/*BOUTON (EXPLORER RESTO)*/
+.btn {
+  width: 250px;
+  font-family: "roboto";
+  font-size: 15px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  background: linear-gradient(#ff79da, #9356dc);
+  border-radius: 50px 50px 50px 50px;
+  box-shadow: 0 1px 5px 0 rgb(0 0 0 / 16%);
+  display: block;
+  padding: 20px 20px;
+  margin: 60px auto 13px auto;
+}
+
+.btn:hover {
+  opacity: 0.33;
+  text-decoration: none;
+}
+
+/*TITRE (FONCTIONNEMENT)*/
+.title-section-bloc {
+  font-family: "roboto";
+  margin-left: 5px;
+  padding: 25px 0;
+  font-size: 25px;
+}
+
+/*TICKETS (choisissez, composez, dégustez) MAUVES*/
+.ticket {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 25px 25px 25px 25px;
+  font-family: "roboto";
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 325px;
+  width: 100%;
+  height: 70px;
+  //margin: 15px;
+  box-shadow: 0 1px 5px 0 rgb(0 0 0 / 16%);
+  background-color: #ffffff;
+  &.purple {
+    background-color: #ffffff;
+  }
+  //PASSAGE SOURIS CHANGEMENT DE COULEUR MAUVE
+  &:hover {
+    background-color: #e6daf5;
+    cursor: pointer;
+  }
+
+  span {
+    position: absolute;
+    left: -12.5px;
+    color: white;
+    border-radius: 100%;
+    background-color: #9356dc;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.ticket .icon {
+  margin: 20px;
+}
+
+footer {
+  padding: 20px;
+  font-family: "roboto";
+  color: white;
+  max-width: 100%;
+  background-color: #353535;
+
+  /*CONTACT MAIL CIBLE BALISE a DANS FOOTER*/
+  a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-top: 15px;
+    &:hover {
+      color: #9356dc;
+    }
+  }
+}
+
+.icon-footer {
+  display: flex;
+  margin-top: 15px;
+
+  span {
+    padding-left: 15px;
+    font-size: 16px;
+  }
+}
+
+.menu-footer {
+  margin-top: 20px;
+  margin: 0 0 15px 0;
+  img {
+    height: 20px;
+  }
+}
+
+/*PAGE MENU*/
+
+/*FLECHE RETOUR ACCUEIL*/
+.fa-arrow-left {
+  position: absolute;
+  left: 20px;
+  top: 35%;
+  font-size: 1.3rem;
+}
+
+/*À la française*/
+.big-title {
+  font-family: shrikhand;
+  font-size: 30px;
+  border-top: 100px;
+}
+
+/*ICONE COEUR*/
+.icon-heart-french {
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 45px;
+  right: 45px;
+}
+
+.coeur {
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 45px;
+  right: 45px;
+}
+
+/*BARRE VERTE*/
+hr {
+  width: 60px;
+  border: 1.5px solid #99e2d0;
+  margin-top: 5px;
+}
+
+/*TITRE ENTRÉES*/
+.starter {
+  padding: 15px;
+  margin-top: -50px;
+  background-color: #edebeb;
+  border-radius: 40px 40px 0px 0px;
+  position: relative;
+
+  /*TOUTES LES ENTRÉES*/
+  .big-section {
+    margin-top: 25px;
+
+    /*TITRE "ENTRÉES"*/
+    h2 {
+      font-family: roboto;
+      font-weight: lighter;
+      font-size: 20px;
+    }
+
+    /*DIV TITRE LISTE ENTRÉES*/
+    .list-section {
+      margin-top: 25px;
+      overflow: hidden;
+
+      /*RESPONSIVE*/
+      display: flex;
+      flex-wrap: wrap;
+      .item-in-section {
+        overflow: hidden;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        max-width: 768px;
+        width: 100%;
+        margin-bottom: 20px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        box-shadow: 0 1px 5px 0 rgb(0 0 0 / 16%);
+        padding: 15px 0;
+        position: relative;
+        transition: 0.3s all;
+
+        &:hover {
+          padding-right: 90px;
+          .add-item {
+            img {
+              transform: rotate(360deg);
+            }
+            width: 83px;
+          }
+        }
+        div:first-child {
+          /*Force la taille du premier div à prendre toute la place qu'il peu prendre */
+          flex: 1;
+          padding: 0 15px;
+        }
+
+        /*TITRE ENTRÉES*/
+        h3 {
+          font-family: roboto;
+          font-size: 20px;
+          margin: 0px 0px 10px 0px;
+        }
+        /*ACCOMPAGNEMENT ENTRÉES*/
+        span {
+          font-family: roboto;
+          font-size: 17px;
+          font-weight: lighter;
+        }
+        /*PRIX ENTRÉES*/
+        p {
+          justify-content: right;
+          font-family: roboto;
+          font-size: 18px;
+          font-weight: bold;
+        }
+        .span-p-display-flex {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .add-item {
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          background-color: #99e2d0;
+          transition: 0.3s all;
+          width: 0px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          img {
+            width: 30px;
+            transform: rotate(0deg);
+            transition: 0.3s all;
+          }
+        }
+      }
+    }
+  }
+}
+/*ESPACE ENTRE ACCOMPAGNEMENT ET PRIX */
+.span-p-display-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*BOUTON COMMANDER*/
+.btn-command a {
+  width: 230px;
+  font-family: "roboto";
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  background: linear-gradient(#ff79da, #9356dc);
+  border-radius: 50px;
+  box-shadow: 0 1px 5px 0 rgb(0 0 0 / 16%);
+  display: block;
+  padding: 20px 20px;
+  margin: 60px auto 100px auto;
+}
